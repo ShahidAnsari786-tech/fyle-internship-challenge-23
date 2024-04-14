@@ -1,33 +1,58 @@
-# Fyle Frontend Challenge
+# Fyle Frontend Challenge < AngularJs >
 
-## Who is this for?
+# Website Description:
+This website appears to be an Angular application that allows users to browse GitHub repositories and view user profiles. It provides a visually appealing interface with loading skeletons for smooth loading transitions and pagination with error handling for easier navigation through repository lists.
 
-This challenge is meant for candidates who wish to intern at Fyle and work with our engineering team. The candidate should be able to commit to at least 6 months of dedicated time for internship.
+[Go Live](https://shahidgithubsearch.netlify.app/)
 
-## Why work at Fyle?
+# Features:
 
-Fyle is a fast-growing Expense Management SaaS product. We are ~40 strong engineering team at the moment. 
+#  User Profile Viewing:
+Enter the Users name in search input and can view GitHub user profiles, including profile picture, name, username, bio, location, Twitter link, and GitHub link.
 
-We are an extremely transparent organization. Check out our [careers page](https://careers.fylehq.com) that will give you a glimpse of what it is like to work at Fyle. Also, check out our Glassdoor reviews [here](https://www.glassdoor.co.in/Reviews/Fyle-Reviews-E1723235.htm). You can read stories from our teammates [here](https://stories.fylehq.com).
+# See Below
+![Screenshot](https://github.com/ShahidAnsari786-tech/fyle-internship-challenge-23/blob/master/src/assets/Screenshot%202024-03-21%20031900.png?raw=true)
 
-## Challenge outline
+# GitHub Repository Browsing:
+Users can browse GitHub repositories, viewing details such as repository name, description, language, and whether it's public or private.By default users can see
+only 10 repositories and can select using below to list out more repositories.
 
-This challenge involves implementing application using github api. 
+# See Below
+![Screenshot](https://github.com/ShahidAnsari786-tech/fyle-internship-challenge-23/blob/master/src/assets/Screenshot%202024-03-21%20032014.png?raw=true)
 
-The services that you need to use are already implemented - check out ApiService.
+# Users can also choose number of repositories shown per page as seen Below 
+* `by Default it shows only 10 respositories per page`
+![Screenshot](https://github.com/ShahidAnsari786-tech/fyle-internship-challenge-23/blob/master/src/assets/Screenshot%202024-04-14%20163137.png?raw=true)  
 
-You can see details of this challenge [here](https://fyleuniverse.notion.site/fyleuniverse/Fyle-Frontend-development-challenge-cb5085e5e0864e769e7b98c694400aaa)
+# Loading Skeletons:
+Loading skeletons are used to provide visual feedback during data fetching, ensuring users are aware of ongoing loading processes.
 
-__Note__ - This challenge is in angular. We work on angular frameworks & after you join we expect the same from you. Hence it is required to complete this assignement in angular itself.
+# See Below
+![Screenshot](https://github.com/ShahidAnsari786-tech/fyle-internship-challenge-23/blob/master/src/assets/Screenshot%202024-03-21%20032308.png?raw=true)
 
-## What happens next?
+# User not found:
+If there is no user with the searched username in Github then it will show a message handled by error handling.
 
-You will hear back within 48 hours from us via email.
+# See Below
+![Screenshot](https://github.com/ShahidAnsari786-tech/fyle-internship-challenge-23/blob/master/src/assets/Screenshot%202024-03-21%20032209.png?raw=true)
 
-## Installation
+# Pagination:
+Pagination controls are available to allow users to navigate through long lists of repositories conveniently.
 
-1. Fork this repository to your github account.
-2. Clone the forked repository and proceed with steps mentioned below.
+# Responsive Design:
+The website appears to be designed with responsiveness in mind, ensuring compatibility across various devices and screen sizes.
+
+# Styling:
+The website features visually appealing styling with consistent color schemes and layout design with tailwind CSS and dynamic styling.
+
+# Dynamic Data Binding:
+Data from GitHub API responses is dynamically bound to the UI, providing real-time updates without the need for page reloads.
+
+# Error Handling:
+Error handling is implemented to manage scenarios like API rate limits and user not found, providing appropriate feedback to users.
+
+# See Below
+![Screenshot](https://github.com/ShahidAnsari786-tech/fyle-internship-challenge-23/blob/master/src/assets/Screenshot%202024-03-22%20011254.png?raw=true)
 
 ### Install requirements
 * Install angular cli [Ref](https://angular.io/cli)
@@ -37,7 +62,23 @@ You will hear back within 48 hours from us via email.
 
 Run `ng serve` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
-## Further help
+# Testing using Jasmine: < 1- Component Unit testing completed, 1 - Service Testing Completed >
 
-Visit the [Angular Documentation](https://angular.io/guide/styleguide) to learn more.
-Styling is to be strictly done with [Tailwind](https://tailwindcss.com/docs/installation).
+# Steps to perform Test :
+
+First install jasmine using terminal with * `npm install --save-dev jasmine` command.
+
+Then Initialize Jasmine in your project with * `npx jasmine init` command.
+
+Now, create a test file for any component or service with `spec.ts` as extension.
+
+Then finally run `npm test` command in the terminal to see the execution.
+
+# See Below
+
+# Execution in terminal:
+![Screenshot](https://github.com/ShahidAnsari786-tech/fyle-internship-challenge-23/blob/master/src/assets/Screenshot%202024-03-21%20175310.png?raw=true)
+
+# Execution in Browser:
+![Screenshot](https://github.com/ShahidAnsari786-tech/fyle-internship-challenge-23/blob/master/src/assets/Screenshot%202024-03-21%20175213.png?raw=true)
+
