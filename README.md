@@ -21,7 +21,8 @@ only 10 repositories and can select using below to list out more repositories.
 ![Screenshot](https://github.com/ShahidAnsari786-tech/fyle-internship-challenge-23/blob/master/src/assets/Screenshot%202024-03-21%20032014.png?raw=true)
 
 # Users can also choose number of repositories shown per page as seen Below 
-* `by Default it shows only 10 respositories per page`
+`by Default it shows only 10 respositories per page`
+
 ![Screenshot](https://github.com/ShahidAnsari786-tech/fyle-internship-challenge-23/blob/master/src/assets/Screenshot%202024-04-14%20163137.png?raw=true)  
 
 # Loading Skeletons:
