@@ -1,0 +1,90 @@
+
+<div class="bg-gray-600 shadow-md loading-skeleton" *ngIf="isLoading; else dataContent">
+    <div class="container mx-auto p-8">
+        <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div *ngFor="let _ of [].constructor(9)" class="bg-gray-800 p-6 rounded-md shadow-md border relative">
+                <div class="text-xl font-semibold text-blue-500 mb-4 text-capital name-skeleton"></div>
+                <div class="absolute bottom-0 right-0 border rounded p-1 mr-2 mb-2 bg-gray-500 text-white private-skeleton">
+                  
+                </div>
+                <p class="text-white mb-4 description-skeleton"></p>
+                <div class="flex items-center">
+                    <span class="text-gray-500 language-skeleton"></span>
+                    <span class="text-white ml-2 language-value-skeleton"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #dataContent>
+<div class="bg-blue-100 shadow-md ">
+  
+    <div class="container mx-auto p-8">
+      
+         <div *ngIf="reposData$ | async as reposData ">
+          <div *ngIf="reposData.length > 0" class="bg-indigo-800 my-5 rounded-md w-60 font-semibold p-4 text-white shadow-lg shadow-indigo-500 text-xl border">Repositories  
+            <span class="border rounded ml-4 p-1 mr-2 mt-2 bg-red-700 text-white"[style.box-shadow]="'1px 3px 2px #0a315e,
+            -1px -3px 2px #2099ff'">{{ reposData.length }}</span>
+          </div>
+            <div class=" grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+                <div *ngFor="let repo of reposData | paginate: { itemsPerPage: pageSize, currentPage: currentPageNumber }"
+                    class="bg-blue-800 p-6 rounded-md shadow-lg shadow-indigo-500 border relative">
+                    <h3 class="text-xl font-semibold text-white mb-4 text-capital">{{ repo.name }}</h3>
+                    <div *ngIf="!repo.private"
+                        class="absolute top-0 right-0 border rounded p-1 mr-2 mt-2 bg-green-700 text-white"[style.box-shadow]="'1px 3px 2px #0a315e,
+                        -1px -3px 2px #2099ff'">Public
+                    </div>
+                    <p class="text-white mb-4">{{ repo.description }}</p>
+                   
+                    <div *ngIf="repo.topics && repo.topics.length > 0">
+                        <ul>
+                          <li
+                            *ngFor="let topic of repo.topics.slice(0,5)"
+                            class="text-md mr-2 bg-blue-800 p-2 mt-2 inline-block rounded-md text-white"[style.border-radius.px]="16"
+                            [style.background]="'linear-gradient(145deg, #166ccd, #135bad)'"
+                            [style.box-shadow]="'1px 3px 2px #0a315e,
+                            -1px -3px 2px #2099ff'"
+                          >
+                            {{ topic }}
+                          </li>
+                        </ul>
+                      </div>
+                       <div class="flex items-center">
+                        <span class="text-white">Language:</span>
+                        <span class="text-white ml-2">{{ repo.language }}</span>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="flex flex-col md:flex-row md:flex-wrap items-center justify-evenly my-8">
+   
+    <div class="flex ml-4 order-2 md:order-none md:ml-0 " style="border-radius: 0px;
+    background: linear-gradient(145deg, #005244, #00453a);
+    box-shadow:  8px 8px 16px #003b31,-8px -8px 16px #005f4f;">
+      <label for="pageSize" class="text-gray-100 mr-2"> Select Items Per Page</label>
+      <select
+        [(ngModel)]="pageSize"
+        name="pageSize"
+        id="pageSize"
+        class="text-teal-700 "
+      >
+        <option
+          *ngFor="let option of perPageOptions"
+          [value]="option">
+          {{ option }}
+        </option>
+      </select>
+    </div>
+    <pagination-controls (pageChange)="pageChanged($event)" [autoHide]="true"
+    class="bg-white m-4 rounded-xl flex item-center justify-center border border-white order-1 md:order-none" style="border-radius: 5px;
+    background: linear-gradient(145deg, #00453a, #005244);
+    box-shadow:  7px 7px 11px #003128,
+    -7px -7px 11px #006958;">
+  </pagination-controls>
+
+  </div>
+</ng-template>
